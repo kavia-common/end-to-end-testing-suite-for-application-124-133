@@ -5,12 +5,12 @@ import { defineConfig, devices } from '@playwright/test';
  * Playwright Test configuration.
  * - testDir: where tests live
  * - reporter: list (CI-friendly)
- * - use.baseURL: from REACT_APP_FRONTEND_URL or defaults to http://localhost:3000
+ * - use.baseURL: fixed base URL sourced from the locator mapping document
  * - timeout: reasonable defaults for e2e
+ *
+ * Note: Per requirements, do not use React app environment variables for baseURL.
  */
-const baseURL =
-  process.env.REACT_APP_FRONTEND_URL?.trim() ||
-  `http://localhost:${process.env.REACT_APP_PORT?.trim() || '3000'}`;
+const baseURL = 'https://app.leadsquared.com';
 
 export default defineConfig({
   testDir: 'tests',
