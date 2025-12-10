@@ -27,6 +27,31 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## End-to-End (E2E) Testing with Playwright
+
+This repository includes Playwright configuration to enable E2E tests without starting/stopping the preview automatically.
+
+### Scripts
+- `npm run test:e2e` — runs Playwright tests in headless mode.
+- `npm run test:e2e:headed` — runs Playwright tests with a visible browser.
+- `npm run test:e2e:ui` — opens the Playwright UI to run/debug tests.
+
+### Base URL
+Playwright uses `REACT_APP_FRONTEND_URL` if set; otherwise it defaults to `http://localhost:3000`.  
+You can also set `REACT_APP_PORT` to change the default localhost port.
+
+### Example test
+An example test lives at `tests/example.spec.ts` and verifies the home page loads and shows the "Learn React" link.
+
+### Running tests
+1. Ensure your app is reachable at the configured base URL (e.g., start it separately with `npm start` if needed).
+2. Execute:  
+   - `npm run test:e2e`  
+   - or `npm run test:e2e:headed`  
+   - or `npm run test:e2e:ui`
+
+> Note: These commands do not manage the app lifecycle; they only execute tests against the provided base URL.
+
 ## Customization
 
 ### Colors
