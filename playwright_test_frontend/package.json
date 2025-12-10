@@ -16,7 +16,8 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:all": "playwright test",
-    "test:e2e:smoke": "playwright test tests/*smoke*.spec.ts"
+    "test:e2e:smoke": "playwright test tests/*smoke*.spec.ts",
+    "test:e2e:js": "playwright test tests/js --reporter=list"
   },
   "eslintConfig": {
     "extends": "react-app"
